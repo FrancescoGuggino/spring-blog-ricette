@@ -1,0 +1,1 @@
+INSERT INTO ricette (titolo,ingredienti, url, tempoPreparazione, porzioni,testoRicetta) VALUES ('Pancake', 'Farina,latte, uova, zucchero, burro, lievito, sale', 'url', '00:30:00', '4', 'testo')

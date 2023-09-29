@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+        crossorigin="anonymous">
+    <title>Ricetta</title>
 </head>
 <body>
+  <h1>Ricette</h1>
+  <table>
+      <thead>
+      <tr>
+          <th>Titolo</th>
+          <th>Ingredienti</th>
+          <th>Url</th>
+          <th>Tempo preparazione</th>
+          <th>Porzioni</th>
+          <th>Testo ricetta</th>
+          <th></th>
+      </tr>
+      <tr th:each="ricetta : ${ricetta}">
+          <th th:text="${ricetta.titolo}"></th>
+          <th th:text="${ricetta.ingredienti}"></th>
+          <th th:text="${ricetta.url}"></th>
+          <th th:text="${ricetta.tempoPreparazione}"></th>
+          <th th:text="${ricetta.porzioni}"></th>
+          <th th:text="${ricetta.testoRicette}"></th>
 
+          <td>
+              <a th:href="@{/show/{id}(id=${ricetta.id})}">Dettagli</a>
+          </td>
+      </tr>
+      </thead>
+  </table>
 </body>
 </html>
