@@ -21,17 +21,19 @@
           <th>Testo ricetta</th>
           <th></th>
       </tr>
-      <tr th:each="ricetta : ${ricetta}">
+      <tr th:each="ricetta : ${ricette}">
           <th th:text="${ricetta.titolo}"></th>
           <th th:text="${ricetta.ingredienti}"></th>
           <th th:text="${ricetta.url}"></th>
           <th th:text="${ricetta.tempoPreparazione}"></th>
           <th th:text="${ricetta.porzioni}"></th>
-          <th th:text="${ricetta.testoRicette}"></th>
+          <th th:text="${ricetta.testoRicetta}"></th>
 
           <td>
-              <a th:href="@{/show/{id}(id=${ricetta.id})}">Dettagli</a>
+              <a th:href="@{/ricetta/show/{id}(id=${ricetta.id})}">Dettagli</a>
           </td>
+
+          <img th:src="@{pancake.jpg}">
       </tr>
       </thead>
   </table>
